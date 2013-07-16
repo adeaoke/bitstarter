@@ -7,10 +7,11 @@ var data = new Buffer(14);
 
 app.get('/', function(request, response) {
   
-    fs.readFileSync(infile,function(err,data));
+    data = fs.readFileSync(infile);
     
-   response.send(data.toString('utf8'));
-});
+   response.send(data.toString('utf8', 0, 14));
+
+
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
