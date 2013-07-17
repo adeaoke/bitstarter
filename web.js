@@ -6,13 +6,14 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
     
-    fs.readFile('./Index.html', function read(err, data) {
+    fs.readFile(infile, function read(err, data) {
         if (err) {
             throw err;
         }
         content = data;
-    });
-    response.send(data.toString('utf8')); // console.log(content);
+	response.send(content);
+  });
+//    response.send(content.toString('utf8')); // console.log(content);
 });
 
 var port = process.env.PORT || 5000;
