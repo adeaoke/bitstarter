@@ -7,7 +7,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
     
     var i=1;
-    for(i=1; i< 2; i++) {
+    for(i=1; i< 103; i++) {
 	data = fs.readFileSync(infile);
 	response.send(data.toString('utf8',0,1024));
     }
